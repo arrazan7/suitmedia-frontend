@@ -1,0 +1,89 @@
+body {
+    padding-top: 60px; /* Adjust based on header height */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.header.hidden {
+    top: -60px; /* Adjust based on header height */
+}
+
+.header-background {
+    background: #ff7b00;
+}
+
+.nav-link.active {
+    font-weight: bold;
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    height: 500px; /* Adjust as needed */
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    transform: translateZ(-1px) scale(2);
+    transition: transform 0.5s ease;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom right, transparent 50%, white 50%);
+}
+
+.post-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.post-title {
+    height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+}
+
+.pagination {
+    justify-content: center;
+}
